@@ -1,8 +1,8 @@
 //
 //  Search.swift
-//  LoggitaleS
+//  TravelApp
 //
-//  Created by Kyle Fletcher on 2/23/24.
+//  Created by Kyle Fletcher on 3/27/24.
 //
 
 import SwiftUI
