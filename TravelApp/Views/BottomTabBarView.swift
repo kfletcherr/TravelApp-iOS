@@ -18,7 +18,9 @@ struct BottomTabBarView: View {
                             Image(systemName: "house")
                             Text("Home")
                         }
-                    Calendar()
+                    NavigationView {
+                        ScheduleView()
+                    }
                         .tabItem() {
                             Image(systemName: "calendar")
                             Text("Calendar")

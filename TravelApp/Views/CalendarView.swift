@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CalendarDay: Identifiable {
-    let id = UUID()
+struct CalendarDay: Identifiable, Equatable {
+    let id: UUID
     let day: Int
-    let isSelected: Bool
+    // Removed isSelected from here as it will be managed via selectedDay
 }
 
 struct ScheduleItem: Identifiable {
@@ -25,21 +25,21 @@ struct ScheduleView: View {
     let month = "March 2024"
     let weekdays = ["S", "M", "T", "W", "T", "F", "S"]
     
-    // Assuming you have a more complete array of days for demonstration
+    @State private var selectedDay: UUID? = nil
+    
     let days: [CalendarDay] = [
-        CalendarDay(day: 1, isSelected: false),
-        CalendarDay(day: 2, isSelected: false),
-        CalendarDay(day: 3, isSelected: false),
-        CalendarDay(day: 4, isSelected: false),
-        CalendarDay(day: 5, isSelected: false),
-        CalendarDay(day: 6, isSelected: false),
-        CalendarDay(day: 7, isSelected: false),
-      
+        CalendarDay(id: UUID(), day: 1),
+        CalendarDay(id: UUID(), day: 2),
+        CalendarDay(id: UUID(), day: 3),
+        CalendarDay(id: UUID(), day: 4),
+        CalendarDay(id: UUID(), day: 5),
+        CalendarDay(id: UUID(), day: 6),
+        CalendarDay(id: UUID(), day: 7),
     ]
     
     let schedule: [ScheduleItem] = [
         ScheduleItem(imageName: "Food", title: "Lunch Reservation", subtitle: "Wynn Buffet", date: "March 22 2024"),
-        ScheduleItem(imageName: "Image", title: "Casino", subtitle: "Las Vegas, Nevada", date: "March 22 2024"),
+        ScheduleItem(imageName: "Image", title: "Casino", subtitle: "Caesers Hotel", date: "March 22 2024"),
         ScheduleItem(imageName: "VShow", title: "Show", subtitle: "Las Vegas, Nevada", date: "March 22 2024")
     ]
     
@@ -50,6 +50,8 @@ struct ScheduleView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding(.horizontal)
+                    .padding(.top,10)
+
                 
                 Divider()
                 
@@ -57,9 +59,9 @@ struct ScheduleView: View {
                 HStack(spacing: 0) {
                     ForEach(weekdays, id: \.self) { weekday in
                         Text(weekday)
-                            .font(.headline)
                             .frame(minWidth: 0, maxWidth: .infinity)
-                            .font(.caption)
+                            .font(.body)
+                            .foregroundColor(.primary) // Adapt to light and dark mode
                     }
                 }
                 .padding(.horizontal)
@@ -73,18 +75,18 @@ struct ScheduleView: View {
                         ForEach(0..<weekdays.count) { column in
                             if (row * weekdays.count + column) < totalDays {
                                 let day = days[row * weekdays.count + column]
-                                Text("\(day.day)")
-                                    .frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding()
-                                    .background(day.isSelected ? Color.blue : Color.clear)
-                                    .foregroundColor(day.isSelected ? .white : .black)
-                                    .font(.headline)
-                                    .clipShape(Circle())
-                                    .overlay(
-                                        Circle()
-                                            .stroke(day.isSelected ? Color.blue : Color.clear, lineWidth: 2)
-                                    )
-                                    .shadow(radius: day.isSelected ? 3 : 0)
+                                Button(action: {
+                                    // Update the selected day
+                                    selectedDay = day.id
+                                }) {
+                                    Text("\(day.day)")
+                                        .frame(minWidth: 0, maxWidth: .infinity)
+                                        .padding()
+                                        .background(day.id == selectedDay ? Color.blue : Color.clear)
+                                        .foregroundColor(day.id == selectedDay ? .white : .primary) // Adjusts for dark mode
+                                        .font(.headline)
+                                        .clipShape(Circle())
+                                }
                             } else {
                                 Text("")
                                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -94,6 +96,7 @@ struct ScheduleView: View {
                     }
                 }
                 .padding(.horizontal)
+                .padding(.bottom,15)
                 
                 Text("My Schedule")
                     .font(.headline)
@@ -104,14 +107,16 @@ struct ScheduleView: View {
                         Image(item.imageName)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 60, height: 60) // Slightly larger for visibility
+                            .frame(width: 60, height: 60)
                             .cornerRadius(8)
                         
-                        VStack(alignment: .leading, spacing: 2) { // Added spacing for clarity
+                        VStack(alignment: .leading, spacing: 2) {
                             Text(item.title)
                                 .font(.headline)
+                                .foregroundColor(.primary) // Adapt to light and dark mode
                             Text(item.subtitle)
                                 .font(.subheadline)
+                                .foregroundColor(.secondary) // Adapt to light and dark mode
                         }
                         Spacer()
                         VStack(alignment: .trailing) {
@@ -128,18 +133,16 @@ struct ScheduleView: View {
             print("Settings tapped")
         }) {
             Image(systemName: "gearshape")
-                .foregroundColor(.black)
+                .foregroundColor(.primary) // Adapt to light and dark mode
         }, trailing: Button(action: {
             print("Edit tapped")
         }) {
             Image(systemName: "bell")
-                .foregroundColor(.black)
+                .foregroundColor(.primary) // Adapt to light and dark mode
         })
         .navigationBarTitle("Schedule", displayMode: .inline)
-        
     }
 }
-
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
