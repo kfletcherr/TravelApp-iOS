@@ -10,7 +10,6 @@ import SwiftUI
 struct CalendarDay: Identifiable, Equatable {
     let id: UUID
     let day: Int
-    // Removed isSelected from here as it will be managed via selectedDay
 }
 
 struct ScheduleItem: Identifiable {
@@ -38,115 +37,181 @@ struct ScheduleView: View {
     ]
     
     let schedule: [ScheduleItem] = [
-        ScheduleItem(imageName: "Food", title: "Lunch Reservation", subtitle: "Wynn Buffet", date: "March 22 2024"),
-        ScheduleItem(imageName: "Image", title: "Casino", subtitle: "Caesers Hotel", date: "March 22 2024"),
-        ScheduleItem(imageName: "VShow", title: "Show", subtitle: "Las Vegas, Nevada", date: "March 22 2024")
+        ScheduleItem(imageName: "Food", title: "Event 1", subtitle: "Location", date: "March 22 2024"),
+        ScheduleItem(imageName: "Image", title: "Event 2", subtitle: "Location", date: "March 22 2024"),
+        ScheduleItem(imageName: "VShow", title: "Event 3", subtitle: "Location", date: "March 22 2024")
     ]
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Text(month)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.horizontal)
-                    .padding(.top,10)
+        NavigationView {
+            ZStack(alignment: .bottom) { // Use ZStack to layer the bottom rectangle
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        Text(month)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.horizontal)
 
-                
-                Divider()
-                
-                // Days of the Week
-                HStack(spacing: 0) {
-                    ForEach(weekdays, id: \.self) { weekday in
-                        Text(weekday)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .font(.body)
-                            .foregroundColor(.primary) // Adapt to light and dark mode
-                    }
-                }
-                .padding(.horizontal)
-                
-                // Calendar Days
-                let totalDays = days.count
-                let rows = (totalDays / weekdays.count) + (totalDays % weekdays.count > 0 ? 1 : 0)
-                
-                ForEach(0..<rows, id: \.self) { row in
-                    HStack(spacing: 0) {
-                        ForEach(0..<weekdays.count) { column in
-                            if (row * weekdays.count + column) < totalDays {
-                                let day = days[row * weekdays.count + column]
-                                Button(action: {
-                                    // Update the selected day
-                                    selectedDay = day.id
-                                }) {
-                                    Text("\(day.day)")
-                                        .frame(minWidth: 0, maxWidth: .infinity)
-                                        .padding()
-                                        .background(day.id == selectedDay ? Color.blue : Color.clear)
-                                        .foregroundColor(day.id == selectedDay ? .white : .primary) // Adjusts for dark mode
-                                        .font(.headline)
-                                        .clipShape(Circle())
-                                }
-                            } else {
-                                Text("")
+                        Divider()
+
+                        // Days of the Week
+                        HStack(spacing: 0) {
+                            ForEach(weekdays, id: \.self) { weekday in
+                                Text(weekday)
                                     .frame(minWidth: 0, maxWidth: .infinity)
-                                    .padding()
+                                    .font(.body)
+                                    .foregroundColor(.primary) // Adapt to light and dark mode
                             }
                         }
-                    }
-                }
-                .padding(.horizontal)
-                .padding(.bottom,15)
-                
-                Text("My Schedule")
-                    .font(.headline)
-                    .padding(.horizontal)
-                
-                ForEach(schedule) { item in
-                    HStack {
-                        Image(item.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 60, height: 60)
-                            .cornerRadius(8)
+                        .padding(.horizontal)
                         
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(item.title)
-                                .font(.headline)
-                                .foregroundColor(.primary) // Adapt to light and dark mode
-                            Text(item.subtitle)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary) // Adapt to light and dark mode
+                        // Calendar Days
+                        let totalDays = days.count
+                        let rows = (totalDays / weekdays.count) + (totalDays % weekdays.count > 0 ? 1 : 0)
+                        
+                        ForEach(0..<rows, id: \.self) { row in
+                            HStack(spacing: 0) {
+                                ForEach(0..<weekdays.count) { column in
+                                    if (row * weekdays.count + column) < totalDays {
+                                        let day = days[row * weekdays.count + column]
+                                        Button(action: {
+                                            selectedDay = day.id
+                                        }) {
+                                            Text("\(day.day)")
+                                                .frame(minWidth: 0, maxWidth: .infinity)
+                                                .padding()
+                                                .background(day.id == selectedDay ? Color.red : Color.clear)
+                                                .foregroundColor(day.id == selectedDay ? .white : .primary)
+                                                .font(.headline)
+                                                .clipShape(Circle())
+                                        }
+                                    } else {
+                                        Text("")
+                                            .frame(minWidth: 0, maxWidth: .infinity)
+                                            .padding()
+                                    }
+                                }
+                            }
                         }
-                        Spacer()
-                        VStack(alignment: .trailing) {
-                            Text(item.date)
-                                .font(.caption2)
-                                .foregroundColor(.gray)
+                        .padding(.horizontal)
+                        .padding(.bottom, 15)
+                        
+                        Text("My Schedule")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        
+                        ForEach(schedule) { item in
+                            NavigationLink(destination: ScheduleDetail(item: item)) {
+                                HStack {
+                                    Image(item.imageName)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 60, height: 60)
+                                        .cornerRadius(8)
+                                    
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(item.title)
+                                            .font(.headline)
+                                            .foregroundColor(.primary)
+                                        Text(item.subtitle)
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                    }
+                                    Spacer()
+                                    VStack(alignment: .trailing) {
+                                        Text(item.date)
+                                            .font(.caption2)
+                                            .foregroundColor(.black)
+                                    }
+                                }
+                                .padding()
+                                .background(Color.white.opacity(0.8))
+                                .cornerRadius(8)
+                                .shadow(radius: 2)
+                            }
+                            .buttonStyle(PlainButtonStyle())
                         }
+                        .padding(.horizontal)
                     }
-                    .padding()
                 }
+                .navigationBarItems(leading: Button(action: {
+                    print("Settings tapped")
+                }) {
+                    Image(systemName: "gearshape")
+                        .foregroundColor(.primary)
+                }, trailing: Button(action: {
+                    print("Edit tapped")
+                }) {
+                    Image(systemName: "plus")
+                        .foregroundColor(.primary)
+                })
+                .navigationBarTitle("Schedule", displayMode: .inline)
+
+                // Semi-transparent white rectangle at the bottom
+            
             }
+            .background(
+                Image("Background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+            )
         }
-        .navigationBarItems(leading: Button(action: {
-            print("Settings tapped")
-        }) {
-            Image(systemName: "gearshape")
-                .foregroundColor(.primary) // Adapt to light and dark mode
-        }, trailing: Button(action: {
-            print("Edit tapped")
-        }) {
-            Image(systemName: "bell")
-                .foregroundColor(.primary) // Adapt to light and dark mode
-        })
-        .navigationBarTitle("Schedule", displayMode: .inline)
     }
 }
+
+struct ScheduleDetail: View {
+    let item: ScheduleItem
+    
+    var body: some View {
+        ScrollView {
+            VStack(spacing: 20) {
+                Image(item.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 300)
+                    .cornerRadius(10)
+                    .shadow(radius: 4)
+                
+                // Encapsulated content inside a white background box
+                VStack(spacing: 8) {
+                    Text(item.title)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.primary)
+                    
+                    Text(item.subtitle)
+                        .font(.title2)
+                        .foregroundColor(.secondary)
+                    
+                    Text(item.date)
+                        .font(.headline)
+                        .foregroundColor(.gray)
+                }
+                .padding()
+                .frame(width: 350, height: 200) // Set specific width and height
+                .background(Color.white.opacity(0.9))
+                .cornerRadius(10)
+                .shadow(radius: 2)
+                
+                Spacer(minLength: 50) // Ensures there is some spacing at the bottom if content is short
+            }
+            .padding(.horizontal)
+            .padding(.top, 20)
+        }
+        .background(
+            Image("Background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+        )
+        .navigationBarTitle(Text("Details"), displayMode: .inline)
+    }
+}
+
+
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            ScheduleView()
-        }
+        ScheduleView()
     }
 }
