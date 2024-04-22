@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  SmallText.swift
 //  TravelApp
 //
 //  Created by Kyle Fletcher on 3/27/24.

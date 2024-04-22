@@ -1,5 +1,5 @@
 //
-//  Profile.swift
+//  AuthTextField.swift
 //  TravelApp
 //
 //  Created by Kyle Fletcher on 3/27/24.
@@ -55,7 +55,7 @@ struct AuthTextField: View {
             .padding(.bottom, 0) // Space below the text field
             .overlay(
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.gray, lineWidth: 1) // This adds the black outline
+                    .stroke(Color.black, lineWidth: 1) // This adds the black outline
             )
         }
         

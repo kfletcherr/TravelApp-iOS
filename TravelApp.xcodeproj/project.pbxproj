@@ -22,6 +22,12 @@
 		82109D4C2BB4D2D700C2B3B7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82109D4B2BB4D2D700C2B3B7 /* Home.swift */; };
 		82109D502BB4D2F600C2B3B7 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82109D4F2BB4D2F600C2B3B7 /* Calendar.swift */; };
 		82109D562BB4D53F00C2B3B7 /* ImageInCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82109D552BB4D53F00C2B3B7 /* ImageInCircle.swift */; };
+		8256A99C2BD7075F006F5B7A /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A99B2BD7075F006F5B7A /* NewTripView.swift */; };
+		8256A99E2BD70911006F5B7A /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A99D2BD70911006F5B7A /* TripDetailView.swift */; };
+		8256A9A02BD709E1006F5B7A /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A99F2BD709E1006F5B7A /* TripStore.swift */; };
+		8256A9A22BD70E75006F5B7A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A9A12BD70E75006F5B7A /* SettingsView.swift */; };
+		8256A9A62BD71836006F5B7A /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A9A52BD71836006F5B7A /* AddEventView.swift */; };
+		8257AC512BD71F2400F0EEC8 /* MonthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */; };
 		82906EDE2BBDC0A20042C30E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906EDD2BBDC0A20042C30E /* CalendarView.swift */; };
 		82906EE02BBDD1A60042C30E /* CatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906EDF2BBDD1A60042C30E /* CatButton.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +49,12 @@
 		82109D4B2BB4D2D700C2B3B7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		82109D4F2BB4D2F600C2B3B7 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		82109D552BB4D53F00C2B3B7 /* ImageInCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInCircle.swift; sourceTree = "<group>"; };
+		8256A99B2BD7075F006F5B7A /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
+		8256A99D2BD70911006F5B7A /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
+		8256A99F2BD709E1006F5B7A /* TripStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
+		8256A9A12BD70E75006F5B7A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8256A9A52BD71836006F5B7A /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSelectionView.swift; sourceTree = "<group>"; };
 		82906EDD2BBDC0A20042C30E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		82906EDF2BBDD1A60042C30E /* CatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +113,12 @@
 				82109D522BB4D4A400C2B3B7 /* Components */,
 				82109D512BB4D49500C2B3B7 /* AuthViews */,
 				82906EDD2BBDC0A20042C30E /* CalendarView.swift */,
+				8256A99B2BD7075F006F5B7A /* NewTripView.swift */,
+				8256A99D2BD70911006F5B7A /* TripDetailView.swift */,
+				8256A99F2BD709E1006F5B7A /* TripStore.swift */,
+				8256A9A12BD70E75006F5B7A /* SettingsView.swift */,
+				8256A9A52BD71836006F5B7A /* AddEventView.swift */,
+				8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8256A99C2BD7075F006F5B7A /* NewTripView.swift in Sources */,
 				82109D482BB4CDE000C2B3B7 /* BottomTabBarView.swift in Sources */,
 				82906EE02BBDD1A60042C30E /* CatButton.swift in Sources */,
 				82109D462BB4CCD400C2B3B7 /* SmallText.swift in Sources */,
@@ -225,12 +244,17 @@
 				82109D3C2BB4C74D00C2B3B7 /* Profile.swift in Sources */,
 				82109D2D2BB4C6E600C2B3B7 /* TravelAppApp.swift in Sources */,
 				82109D562BB4D53F00C2B3B7 /* ImageInCircle.swift in Sources */,
+				8256A9A02BD709E1006F5B7A /* TripStore.swift in Sources */,
+				8257AC512BD71F2400F0EEC8 /* MonthSelectionView.swift in Sources */,
 				82906EDE2BBDC0A20042C30E /* CalendarView.swift in Sources */,
+				8256A99E2BD70911006F5B7A /* TripDetailView.swift in Sources */,
 				82109D502BB4D2F600C2B3B7 /* Calendar.swift in Sources */,
 				82109D422BB4CC5600C2B3B7 /* AuthTextField.swift in Sources */,
+				8256A9A62BD71836006F5B7A /* AddEventView.swift in Sources */,
 				82109D4A2BB4D2A800C2B3B7 /* Search.swift in Sources */,
 				82109D3E2BB4C7DE00C2B3B7 /* Login.swift in Sources */,
 				82109D402BB4C7E800C2B3B7 /* SignUp.swift in Sources */,
+				8256A9A22BD70E75006F5B7A /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

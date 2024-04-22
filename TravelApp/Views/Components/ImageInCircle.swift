@@ -1,6 +1,6 @@
 //
 //  ImageInCircle.swift
-//  LoggitaleS
+//  TravelApp
 //
 //  Created by Kyle Fletcher on 2/23/24.
 //
