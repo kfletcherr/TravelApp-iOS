@@ -29,7 +29,7 @@ struct BottomTabBarView: View {
                 // This ensures there's no unwanted space between your content and the tab bar
                 Spacer()
                 customTabBar
-                    .background(Color.white.opacity(0.8)) // Background of the custom tab bar
+                    .background(Color.white.opacity(0.9)) // Background of the custom tab bar
                     .frame(height: 25) // Adjust this height as needed
                     .edgesIgnoringSafeArea(.bottom) // Makes it extend into the safe area
             }

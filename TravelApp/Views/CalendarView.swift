@@ -21,10 +21,10 @@ struct ScheduleItem: Identifiable {
 }
 
 struct ScheduleView: View {
-    let month = "March 2024"
+    @State private var month = "March 2024"  // This is now a mutable state.
     let weekdays = ["S", "M", "T", "W", "T", "F", "S"]
-    
     @State private var selectedDay: UUID? = nil
+    @State private var showingMonthSelector = false  // For showing/hiding the month selector
     
     let days: [CalendarDay] = [
         CalendarDay(id: UUID(), day: 1),
@@ -51,9 +51,9 @@ struct ScheduleView: View {
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding(.horizontal)
-
+                        
                         Divider()
-
+                        
                         // Days of the Week
                         HStack(spacing: 0) {
                             ForEach(weekdays, id: \.self) { weekday in
@@ -135,9 +135,9 @@ struct ScheduleView: View {
                     }
                 }
                 .navigationBarItems(leading: Button(action: {
-                    print("Settings tapped")
+                    self.showingMonthSelector = true
                 }) {
-                    Image(systemName: "gearshape")
+                    Image(systemName: "calendar")
                         .foregroundColor(.primary)
                 }, trailing: Button(action: {
                     print("Edit tapped")
@@ -146,9 +146,9 @@ struct ScheduleView: View {
                         .foregroundColor(.primary)
                 })
                 .navigationBarTitle("Schedule", displayMode: .inline)
-
-                // Semi-transparent white rectangle at the bottom
-            
+                .sheet(isPresented: $showingMonthSelector) {
+                    MonthSelectionView(selectedMonth: $month)
+                }
             }
             .background(
                 Image("Background")
@@ -159,6 +159,7 @@ struct ScheduleView: View {
         }
     }
 }
+
 
 struct ScheduleDetail: View {
     let item: ScheduleItem
