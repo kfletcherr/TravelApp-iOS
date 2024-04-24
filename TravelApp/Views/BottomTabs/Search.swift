@@ -1,81 +1,58 @@
-//
-//  Search.swift
-//  TravelApp
-//
-//  Created by Kyle Fletcher on 3/27/24.
-//
-
 import SwiftUI
 
 struct Search: View {
-    
     @State private var search: String = ""
     
     var body: some View {
         NavigationView{
             ScrollView {
-                VStack (spacing: 5){
-                    
-                    
-                    
+                VStack(spacing: 5) {
                     AuthTextField(input: $search, placeHolder: "Search")
-                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))                            .padding(.bottom, 10)
+                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))
+                        .padding(.bottom, 10)
                     
-                    VStack{
-                        
-                        
-                        Button(action: {
-                            // action for later
-                            
-                        }) {
-                            CatButton(title: "Food", imageName: "Food")
+                    VStack {
+                        NavigationLink(destination: FoodView()) {
+                            CatButton(title: "Food", imageName: "food")
                         }
-                        Button(action: {
-                            // action for later
-                            
-                        }) {
-                            CatButton(title: "Attractions", imageName: "Attractions")                        }
-                        
-                        
-                        Button(action: {
-                            // action for later
-                            
-                        }) {
-                            CatButton(title: "Night Life", imageName: "NightLife")                        }
-                        Button(action: {
-                            // action for later
-                            
-                        }) {
-                            CatButton(title: "Hiking", imageName: "Hiking")                        }
-                        
-                        
-                        Button(action: {
-                            // action for later
-                            
-                        }) {
-                            CatButton(title: "Family", imageName: "Family")                       }
+                        NavigationLink(destination: AttractionsView()) {
+                            CatButton(title: "Attractions", imageName: "attraction")
+                        }
+                        NavigationLink(destination: NightLifeView()) {
+                            CatButton(title: "Night Life", imageName: "nightlife")
+                        }
+                        NavigationLink(destination: FamilyView()) {
+                            CatButton(title: "Family", imageName: "family")
+                        }
                         Spacer() // Pushes the button to the left
                     }
                 }
             }
-            
-            .navigationBarItems(leading: Button(action: {
-                print("Settings tapped")
-            }) {
-                Image(systemName: "gearshape")
-                    .foregroundColor(.primary) // Adapt to light and dark mode
+            .navigationBarItems(leading: HStack {
+                Button(action: {
+                    print("Settings tapped")
+                }) {
+                    Image(systemName: "rectangle.grid.1x2.fill")
+                        .foregroundColor(.primary)
+                }
+                Button(action: {
+                    print("Additional icon tapped")
+                }) {
+                    Image(systemName: "rectangle.grid.2x2.fill")
+                        .foregroundColor(.primary)
+                }
             }, trailing: Button(action: {
                 print("Edit tapped")
             }) {
-                Image(systemName: "bell")
-                    .foregroundColor(.primary) // Adapt to light and dark mode
+                Image(systemName: "shuffle")
+                    .foregroundColor(.primary)
             })
             .navigationBarTitle("Search", displayMode: .inline)
             .background(
-                Image("Background") // Use your background image
+                Image("Background")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all) // Make the background fill the entire screen
+                    .edgesIgnoringSafeArea(.all)
             )
         }
     }

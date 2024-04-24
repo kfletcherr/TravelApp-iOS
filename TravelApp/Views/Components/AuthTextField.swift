@@ -55,7 +55,7 @@ struct AuthTextField: View {
             .padding(.bottom, 0) // Space below the text field
             .overlay(
                 RoundedRectangle(cornerRadius: 5)
-                    .stroke(Color.black, lineWidth: 1) // This adds the black outline
+                    .stroke(Color.black, lineWidth: 5) // This adds the black outline
             )
         }
         

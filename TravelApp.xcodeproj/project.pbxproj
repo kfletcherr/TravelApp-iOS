@@ -28,6 +28,7 @@
 		8256A9A22BD70E75006F5B7A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A9A12BD70E75006F5B7A /* SettingsView.swift */; };
 		8256A9A62BD71836006F5B7A /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A9A52BD71836006F5B7A /* AddEventView.swift */; };
 		8257AC512BD71F2400F0EEC8 /* MonthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */; };
+		8257AC552BD98F1F00F0EEC8 /* SearchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257AC542BD98F1E00F0EEC8 /* SearchViews.swift */; };
 		82906EDE2BBDC0A20042C30E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906EDD2BBDC0A20042C30E /* CalendarView.swift */; };
 		82906EE02BBDD1A60042C30E /* CatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906EDF2BBDD1A60042C30E /* CatButton.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		8256A9A12BD70E75006F5B7A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8256A9A52BD71836006F5B7A /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSelectionView.swift; sourceTree = "<group>"; };
+		8257AC542BD98F1E00F0EEC8 /* SearchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViews.swift; sourceTree = "<group>"; };
 		82906EDD2BBDC0A20042C30E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		82906EDF2BBDD1A60042C30E /* CatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				8256A9A12BD70E75006F5B7A /* SettingsView.swift */,
 				8256A9A52BD71836006F5B7A /* AddEventView.swift */,
 				8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */,
+				8257AC542BD98F1E00F0EEC8 /* SearchViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				8256A99C2BD7075F006F5B7A /* NewTripView.swift in Sources */,
 				82109D482BB4CDE000C2B3B7 /* BottomTabBarView.swift in Sources */,
+				8257AC552BD98F1F00F0EEC8 /* SearchViews.swift in Sources */,
 				82906EE02BBDD1A60042C30E /* CatButton.swift in Sources */,
 				82109D462BB4CCD400C2B3B7 /* SmallText.swift in Sources */,
 				82109D2F2BB4C6E600C2B3B7 /* ContentView.swift in Sources */,
