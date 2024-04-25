@@ -94,7 +94,7 @@ struct Home: View {
         Button(action: {
             showingSettingsView = true
         }) {
-            Image(systemName: "gearshape").foregroundColor(.primary)
+            Image(systemName: "slider.horizontal.3").foregroundColor(.primary)
         }
     }
     
@@ -123,7 +123,7 @@ private func tripSection(title: String, trips: Binding<[Trip]>) -> some View {
                             .frame(width: 140, height: 100)
                             .clipped()
                             .cornerRadius(8)
-                            .border(Color.black, width: 2)
+                            .border(Color.black, width: 3)
                     }
                 }
             }

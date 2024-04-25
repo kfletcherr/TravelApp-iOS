@@ -15,7 +15,7 @@ struct CatButton: View {
                 .clipped()
                 .overlay(
                     RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.black, lineWidth: 1) // Adjust the stroke to be less prominent
+                        .stroke(Color.black, lineWidth: 3) // Adjust the stroke to be less prominent
                 )
                 .shadow(color: .gray, radius: 5, x: 0, y: 2)
                 .padding(.top, 15)

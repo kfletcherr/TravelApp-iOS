@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct FoodView: View {
+struct DestinationsView: View {
     var body: some View {
-        List(PlaceData.foodPlaces) { place in
+        List(PlaceData.AllPlaces) { place in
             VStack(alignment: .leading) {
                 Text(place.name)
                     .font(.headline)
@@ -21,14 +21,20 @@ struct FoodView: View {
                     .frame(height: 100)
             }
         }
-        .navigationTitle("Food")
+        .navigationTitle("All Vacations")
+        .background(
+                    Image("Background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
     }
 }
 
 
-struct AttractionsView: View {
+struct BeachView: View {
     var body: some View {
-        List(PlaceData.attractions) { place in
+        List(PlaceData.beaches) { place in
             VStack(alignment: .leading) {
                 Text(place.name)
                     .font(.headline)
@@ -40,13 +46,19 @@ struct AttractionsView: View {
                     .frame(height: 100)
             }
         }
-        .navigationTitle("Attractions")
+        .navigationTitle("Beach Vacations")
+        .background(
+                    Image("Background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
     }
 }
 
-struct NightLifeView: View {
+struct CulturalView: View {
     var body: some View {
-        List(PlaceData.nightLife) { place in
+        List(PlaceData.culturePlaces) { place in
             VStack(alignment: .leading) {
                 Text(place.name)
                     .font(.headline)
@@ -58,7 +70,61 @@ struct NightLifeView: View {
                     .frame(height: 100)
             }
         }
-        .navigationTitle("Night Life")
+        .navigationTitle("Cultural Vacations")
+        .background(
+                    Image("Background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
+    }
+}
+
+struct RomanticView: View {
+    var body: some View {
+        List(PlaceData.RomanticPlaces) { place in
+            VStack(alignment: .leading) {
+                Text(place.name)
+                    .font(.headline)
+                Text(place.description)
+                    .font(.subheadline)
+                Image(place.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+            }
+        }
+        .navigationTitle("Romantic Vacations")
+        .background(
+                    Image("Background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
+    }
+}
+
+struct CampingView: View {
+    var body: some View {
+        List(PlaceData.CampingPlaces) { place in
+            VStack(alignment: .leading) {
+                Text(place.name)
+                    .font(.headline)
+                Text(place.description)
+                    .font(.subheadline)
+                Image(place.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+            }
+        }
+        .navigationTitle("Camping Trips")
+        .background(
+                    Image("Background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
     }
 }
 
@@ -77,7 +143,13 @@ struct FamilyView: View {
                     .frame(height: 100)
             }
         }
-        .navigationTitle("Family Fun")
+        .navigationTitle("Family Vacations")
+        .background(
+                    Image("Background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                )
     }
 }
 
@@ -93,27 +165,31 @@ struct Place: Identifiable {
 
 
 struct PlaceData {
-    static let foodPlaces = [
-        Place(name: "Casa Italiano", description: "Authentic Italian cuisine in the heart of the city.", imageName: "italian"),
-        Place(name: "Sushi Sun", description: "Fresh sushi and Japanese dishes.", imageName: "sushi")
+    static let AllPlaces = [
+        Place(name: "Casa Italiano", description: "Authentic Italian cuisine in the heart of the city.", imageName: "family"),
+        Place(name: "Sushi Sun", description: "Fresh sushi and Japanese dishes.", imageName: "attraction")
     ]
 
-    static let attractions = [
+    static let beaches = [
         Place(name: "City Museum", description: "Explore the history of the city.", imageName: "museum"),
         Place(name: "Central Park", description: "Beautiful urban park for relaxing and events.", imageName: "park")
     ]
 
-    static let nightLife = [
+    static let culturePlaces = [
         Place(name: "Skyline Bar", description: "Enjoy the city views with cocktails.", imageName: "bar"),
         Place(name: "Dance Club 101", description: "Best place in town for dancing and live DJ.", imageName: "club")
     ]
 
-    static let hiking = [
+    static let CampingPlaces = [
         Place(name: "Mountain Trail", description: "Scenic hiking route through the mountains.", imageName: "mountain"),
         Place(name: "Riverside Walk", description: "A gentle walk by the river, great for all ages.", imageName: "riverwalk")
     ]
 
     static let family = [
+        Place(name: "Zoo City", description: "Meet exotic animals and learn about wildlife.", imageName: "zoo"),
+        Place(name: "Wonderland", description: "Amusement park with rides and games for the whole family.", imageName: "amusement")
+    ]
+    static let RomanticPlaces = [
         Place(name: "Zoo City", description: "Meet exotic animals and learn about wildlife.", imageName: "zoo"),
         Place(name: "Wonderland", description: "Amusement park with rides and games for the whole family.", imageName: "amusement")
     ]

@@ -12,17 +12,23 @@ struct Search: View {
                         .padding(.bottom, 10)
                     
                     VStack {
-                        NavigationLink(destination: FoodView()) {
-                            CatButton(title: "Food", imageName: "food")
+                        NavigationLink(destination: DestinationsView()) {
+                            CatButton(title: "All Destinations", imageName: "destination")
                         }
-                        NavigationLink(destination: AttractionsView()) {
-                            CatButton(title: "Attractions", imageName: "attraction")
+                        NavigationLink(destination: BeachView()) {
+                            CatButton(title: "Beach", imageName: "beach")
                         }
-                        NavigationLink(destination: NightLifeView()) {
-                            CatButton(title: "Night Life", imageName: "nightlife")
+                        NavigationLink(destination: CampingView()) {
+                            CatButton(title: "Camping", imageName: "camping")
+                        }
+                        NavigationLink(destination: RomanticView()) {
+                            CatButton(title: "Romantic", imageName: "romantic")
                         }
                         NavigationLink(destination: FamilyView()) {
                             CatButton(title: "Family", imageName: "family")
+                        }
+                        NavigationLink(destination: CulturalView()) {
+                            CatButton(title: "Cultural", imageName: "cultural")
                         }
                         Spacer() // Pushes the button to the left
                     }
