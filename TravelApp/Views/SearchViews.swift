@@ -158,7 +158,8 @@ struct Place: Identifiable {
     var id = UUID()
     var name: String
     var description: String
-    var imageName: String // This could link to an asset for displaying an image
+    var imageName: String
+    var weather: WeatherData?  // Optional, will store weather data once fetched
 }
 
 
@@ -166,8 +167,10 @@ struct Place: Identifiable {
 
 struct PlaceData {
     static let AllPlaces = [
-        Place(name: "Casa Italiano", description: "Authentic Italian cuisine in the heart of the city.", imageName: "family"),
-        Place(name: "Sushi Sun", description: "Fresh sushi and Japanese dishes.", imageName: "attraction")
+        Place(name: "New York", description: "Authentic Italian cuisine in the heart of the city.", imageName: "family"),
+        Place(name: "Orlando", description: "Fresh sushi and Japanese dishes.", imageName: "attraction"),
+        Place(name: "Las Vegas", description: "Authentic Italian cuisine in the heart of the city.", imageName: "family"),
+        Place(name: "Paris", description: "Fresh sushi and Japanese dishes.", imageName: "attraction")
     ]
 
     static let beaches = [

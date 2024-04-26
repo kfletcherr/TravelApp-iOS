@@ -41,12 +41,12 @@ struct Search: View {
                     Image(systemName: "rectangle.grid.1x2.fill")
                         .foregroundColor(.primary)
                 }
-                Button(action: {
-                    print("Additional icon tapped")
-                }) {
-                    Image(systemName: "rectangle.grid.2x2.fill")
-                        .foregroundColor(.primary)
-                }
+//                Button(action: {
+//                    print("Additional icon tapped")
+//                }) {
+//                    Image(systemName: "rectangle.grid.2x2.fill")
+//                        .foregroundColor(.primary)
+//                }
             }, trailing: Button(action: {
                 print("Edit tapped")
             }) {
