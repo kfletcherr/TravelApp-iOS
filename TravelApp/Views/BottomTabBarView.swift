@@ -43,9 +43,9 @@ struct BottomTabBarView: View {
             Spacer()
             tabButton(for: .schedule, iconName: "calendar", label: "Calendar")
             Spacer()
-            tabButton(for: .search, iconName: "magnifyingglass", label: "Search")
+            tabButton(for: .search, iconName: "airplane.departure", label: "Destinations")
             Spacer()
-            tabButton(for: .profile, iconName: "person", label: "Profile")
+            tabButton(for: .profile, iconName: "cloud.sun", label: "Weather")
         }
         .padding(.horizontal)
         .padding(.bottom, 0) // Give some bottom padding inside the tab bar for visual balance

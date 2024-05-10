@@ -22,14 +22,27 @@
 		82109D4C2BB4D2D700C2B3B7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82109D4B2BB4D2D700C2B3B7 /* Home.swift */; };
 		82109D502BB4D2F600C2B3B7 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82109D4F2BB4D2F600C2B3B7 /* Calendar.swift */; };
 		82109D562BB4D53F00C2B3B7 /* ImageInCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82109D552BB4D53F00C2B3B7 /* ImageInCircle.swift */; };
+		821B15822BE4179D00027A35 /* SimpleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821B15812BE4179D00027A35 /* SimpleImageView.swift */; };
+		821E3DE22BDAD61500264A07 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 821E3DE12BDAD61500264A07 /* FirebaseAnalytics */; };
+		821E3DE42BDAD61500264A07 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 821E3DE32BDAD61500264A07 /* FirebaseAnalyticsOnDeviceConversion */; };
+		821E3DE62BDAD61500264A07 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 821E3DE52BDAD61500264A07 /* FirebaseAnalyticsSwift */; };
+		821E3DE82BDAD61500264A07 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 821E3DE72BDAD61500264A07 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		821E3DEA2BDAD61500264A07 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 821E3DE92BDAD61500264A07 /* FirebaseAppCheck */; };
+		821E3DEC2BDAE23300264A07 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821E3DEB2BDAE23300264A07 /* WeatherService.swift */; };
+		82272EC02BE2EC35005CDAD6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82272EBF2BE2EC35005CDAD6 /* ImagePicker.swift */; };
+		82272EC22BE2F3F1005CDAD6 /* AddCityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82272EC12BE2F3F1005CDAD6 /* AddCityView.swift */; };
 		8256A99C2BD7075F006F5B7A /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A99B2BD7075F006F5B7A /* NewTripView.swift */; };
 		8256A99E2BD70911006F5B7A /* TripDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A99D2BD70911006F5B7A /* TripDetailView.swift */; };
 		8256A9A02BD709E1006F5B7A /* TripStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A99F2BD709E1006F5B7A /* TripStore.swift */; };
 		8256A9A22BD70E75006F5B7A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A9A12BD70E75006F5B7A /* SettingsView.swift */; };
 		8256A9A62BD71836006F5B7A /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8256A9A52BD71836006F5B7A /* AddEventView.swift */; };
 		8257AC512BD71F2400F0EEC8 /* MonthSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */; };
+		8257AC552BD98F1F00F0EEC8 /* SearchViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8257AC542BD98F1E00F0EEC8 /* SearchViews.swift */; };
 		82906EDE2BBDC0A20042C30E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906EDD2BBDC0A20042C30E /* CalendarView.swift */; };
 		82906EE02BBDD1A60042C30E /* CatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82906EDF2BBDD1A60042C30E /* CatButton.swift */; };
+		82A6C4DD2BE2D24100CA1842 /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A6C4DC2BE2D24100CA1842 /* Firebase.swift */; };
+		82C775D12BED2F1500D25A47 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 82C775D02BED2F1500D25A47 /* FirebaseStorage */; };
+		82C775D32BED330400D25A47 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 82C775D22BED330400D25A47 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,14 +62,21 @@
 		82109D4B2BB4D2D700C2B3B7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		82109D4F2BB4D2F600C2B3B7 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		82109D552BB4D53F00C2B3B7 /* ImageInCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInCircle.swift; sourceTree = "<group>"; };
+		821B15812BE4179D00027A35 /* SimpleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageView.swift; sourceTree = "<group>"; };
+		821E3DEB2BDAE23300264A07 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		82272EBF2BE2EC35005CDAD6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		82272EC12BE2F3F1005CDAD6 /* AddCityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityView.swift; sourceTree = "<group>"; };
 		8256A99B2BD7075F006F5B7A /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
 		8256A99D2BD70911006F5B7A /* TripDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailView.swift; sourceTree = "<group>"; };
 		8256A99F2BD709E1006F5B7A /* TripStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStore.swift; sourceTree = "<group>"; };
 		8256A9A12BD70E75006F5B7A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8256A9A52BD71836006F5B7A /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
 		8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSelectionView.swift; sourceTree = "<group>"; };
+		8257AC542BD98F1E00F0EEC8 /* SearchViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViews.swift; sourceTree = "<group>"; };
 		82906EDD2BBDC0A20042C30E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		82906EDF2BBDD1A60042C30E /* CatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatButton.swift; sourceTree = "<group>"; };
+		82A6C4DC2BE2D24100CA1842 /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		82C775D22BED330400D25A47 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +84,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821E3DE62BDAD61500264A07 /* FirebaseAnalyticsSwift in Frameworks */,
+				821E3DE22BDAD61500264A07 /* FirebaseAnalytics in Frameworks */,
+				821E3DE42BDAD61500264A07 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				821E3DEA2BDAD61500264A07 /* FirebaseAppCheck in Frameworks */,
+				821E3DE82BDAD61500264A07 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				82C775D12BED2F1500D25A47 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +115,8 @@
 		82109D2B2BB4C6E600C2B3B7 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
+				82C775D42BED371300D25A47 /* Other Views */,
+				82C775D22BED330400D25A47 /* GoogleService-Info.plist */,
 				82109D542BB4D50900C2B3B7 /* App */,
 				82109D3A2BB4C6F800C2B3B7 /* Views */,
 				82109D302BB4C6E800C2B3B7 /* Assets.xcassets */,
@@ -112,13 +140,6 @@
 				82109D472BB4CDE000C2B3B7 /* BottomTabBarView.swift */,
 				82109D522BB4D4A400C2B3B7 /* Components */,
 				82109D512BB4D49500C2B3B7 /* AuthViews */,
-				82906EDD2BBDC0A20042C30E /* CalendarView.swift */,
-				8256A99B2BD7075F006F5B7A /* NewTripView.swift */,
-				8256A99D2BD70911006F5B7A /* TripDetailView.swift */,
-				8256A99F2BD709E1006F5B7A /* TripStore.swift */,
-				8256A9A12BD70E75006F5B7A /* SettingsView.swift */,
-				8256A9A52BD71836006F5B7A /* AddEventView.swift */,
-				8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,8 +181,28 @@
 			children = (
 				82109D2C2BB4C6E600C2B3B7 /* TravelAppApp.swift */,
 				82109D2E2BB4C6E600C2B3B7 /* ContentView.swift */,
+				82A6C4DC2BE2D24100CA1842 /* Firebase.swift */,
+				82272EBF2BE2EC35005CDAD6 /* ImagePicker.swift */,
+				821B15812BE4179D00027A35 /* SimpleImageView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		82C775D42BED371300D25A47 /* Other Views */ = {
+			isa = PBXGroup;
+			children = (
+				82906EDD2BBDC0A20042C30E /* CalendarView.swift */,
+				8256A99B2BD7075F006F5B7A /* NewTripView.swift */,
+				8256A99D2BD70911006F5B7A /* TripDetailView.swift */,
+				8256A99F2BD709E1006F5B7A /* TripStore.swift */,
+				8256A9A12BD70E75006F5B7A /* SettingsView.swift */,
+				8256A9A52BD71836006F5B7A /* AddEventView.swift */,
+				8257AC502BD71F2400F0EEC8 /* MonthSelectionView.swift */,
+				8257AC542BD98F1E00F0EEC8 /* SearchViews.swift */,
+				821E3DEB2BDAE23300264A07 /* WeatherService.swift */,
+				82272EC12BE2F3F1005CDAD6 /* AddCityView.swift */,
+			);
+			path = "Other Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +221,14 @@
 			dependencies = (
 			);
 			name = TravelApp;
+			packageProductDependencies = (
+				821E3DE12BDAD61500264A07 /* FirebaseAnalytics */,
+				821E3DE32BDAD61500264A07 /* FirebaseAnalyticsOnDeviceConversion */,
+				821E3DE52BDAD61500264A07 /* FirebaseAnalyticsSwift */,
+				821E3DE72BDAD61500264A07 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				821E3DE92BDAD61500264A07 /* FirebaseAppCheck */,
+				82C775D02BED2F1500D25A47 /* FirebaseStorage */,
+			);
 			productName = TravelApp;
 			productReference = 82109D292BB4C6E600C2B3B7 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -208,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 82109D202BB4C6E600C2B3B7;
+			packageReferences = (
+				821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 82109D2A2BB4C6E600C2B3B7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -223,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82109D342BB4C6E800C2B3B7 /* Preview Assets.xcassets in Resources */,
+				82C775D32BED330400D25A47 /* GoogleService-Info.plist in Resources */,
 				82109D312BB4C6E800C2B3B7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,12 +287,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				821B15822BE4179D00027A35 /* SimpleImageView.swift in Sources */,
 				8256A99C2BD7075F006F5B7A /* NewTripView.swift in Sources */,
 				82109D482BB4CDE000C2B3B7 /* BottomTabBarView.swift in Sources */,
+				82272EC02BE2EC35005CDAD6 /* ImagePicker.swift in Sources */,
+				8257AC552BD98F1F00F0EEC8 /* SearchViews.swift in Sources */,
 				82906EE02BBDD1A60042C30E /* CatButton.swift in Sources */,
 				82109D462BB4CCD400C2B3B7 /* SmallText.swift in Sources */,
+				821E3DEC2BDAE23300264A07 /* WeatherService.swift in Sources */,
 				82109D2F2BB4C6E600C2B3B7 /* ContentView.swift in Sources */,
 				82109D4C2BB4D2D700C2B3B7 /* Home.swift in Sources */,
+				82272EC22BE2F3F1005CDAD6 /* AddCityView.swift in Sources */,
 				82109D442BB4CC7800C2B3B7 /* AuthButton.swift in Sources */,
 				82109D3C2BB4C74D00C2B3B7 /* Profile.swift in Sources */,
 				82109D2D2BB4C6E600C2B3B7 /* TravelAppApp.swift in Sources */,
@@ -250,6 +308,7 @@
 				8256A99E2BD70911006F5B7A /* TripDetailView.swift in Sources */,
 				82109D502BB4D2F600C2B3B7 /* Calendar.swift in Sources */,
 				82109D422BB4CC5600C2B3B7 /* AuthTextField.swift in Sources */,
+				82A6C4DD2BE2D24100CA1842 /* Firebase.swift in Sources */,
 				8256A9A62BD71836006F5B7A /* AddEventView.swift in Sources */,
 				82109D4A2BB4D2A800C2B3B7 /* Search.swift in Sources */,
 				82109D3E2BB4C7DE00C2B3B7 /* Login.swift in Sources */,
@@ -396,6 +455,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -425,6 +485,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +521,49 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		821E3DE12BDAD61500264A07 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		821E3DE32BDAD61500264A07 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		821E3DE52BDAD61500264A07 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		821E3DE72BDAD61500264A07 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		821E3DE92BDAD61500264A07 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 821E3DE02BDAD61400264A07 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		82C775D02BED2F1500D25A47 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 82109D212BB4C6E600C2B3B7 /* Project object */;
 }
