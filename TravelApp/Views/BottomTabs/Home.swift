@@ -7,6 +7,9 @@
 
 
 import SwiftUI
+import Firebase
+import FirebaseStorage
+
 
 // MARK: - Data Model
 struct Trip: Identifiable {
@@ -133,6 +136,9 @@ private func tripSection(title: String, trips: Binding<[Trip]>) -> some View {
     .background(Color.white.opacity(0.8))
     .cornerRadius(10)
 }
+
+
+
 
 
 // MARK: - Preview

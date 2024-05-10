@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import Foundation
+import Firebase
+
 
 @main
 struct TravelAppApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
+    init() {
+        FirebaseApp.configure()    }
+    
 }

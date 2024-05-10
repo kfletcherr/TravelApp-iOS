@@ -43,7 +43,7 @@ struct BottomTabBarView: View {
             Spacer()
             tabButton(for: .schedule, iconName: "calendar", label: "Calendar")
             Spacer()
-            tabButton(for: .search, iconName: "magnifyingglass", label: "Search")
+            tabButton(for: .search, iconName: "airplane.departure", label: "Destinations")
             Spacer()
             tabButton(for: .profile, iconName: "cloud.sun", label: "Weather")
         }

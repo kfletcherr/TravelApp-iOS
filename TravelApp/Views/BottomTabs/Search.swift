@@ -7,9 +7,9 @@ struct Search: View {
         NavigationView{
             ScrollView {
                 VStack(spacing: 5) {
-                    AuthTextField(input: $search, placeHolder: "Search")
-                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))
-                        .padding(.bottom, 10)
+//                    AuthTextField(input: $search, placeHolder: "Search")
+//                        .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))
+//                        .padding(.bottom, 10)
                     
                     VStack {
                         NavigationLink(destination: DestinationsView()) {
@@ -34,26 +34,7 @@ struct Search: View {
                     }
                 }
             }
-            .navigationBarItems(leading: HStack {
-                Button(action: {
-                    print("Settings tapped")
-                }) {
-                    Image(systemName: "rectangle.grid.1x2.fill")
-                        .foregroundColor(.primary)
-                }
-//                Button(action: {
-//                    print("Additional icon tapped")
-//                }) {
-//                    Image(systemName: "rectangle.grid.2x2.fill")
-//                        .foregroundColor(.primary)
-//                }
-            }, trailing: Button(action: {
-                print("Edit tapped")
-            }) {
-                Image(systemName: "shuffle")
-                    .foregroundColor(.primary)
-            })
-            .navigationBarTitle("Search", displayMode: .inline)
+//
             .background(
                 Image("Background")
                     .resizable()

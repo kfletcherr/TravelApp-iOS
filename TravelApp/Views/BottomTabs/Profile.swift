@@ -3,6 +3,8 @@ import SwiftUI
 struct Profile: View {
     @State private var locations: [String] = ["New York", "Orlando", "Las Vegas", "Paris", "Cozumel", "Houston", "Chicago"]
     @State private var weatherInfo: [String: WeatherData] = [:]
+    @State private var showingAddCityView = false
+    @State private var inDeletionMode = false
     
     private var weatherService = WeatherService()
 
@@ -10,16 +12,14 @@ struct Profile: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    ImageInCircle(imgName: "profile")
-                        .padding(.bottom, 30)
-
                     ForEach(locations, id: \.self) { location in
-                        WeatherCard(location: location, weather: weatherInfo[location])
-                            .onAppear {
-                                loadWeather(for: location)
-                            }
-                            // Apply padding conditionally if the location is the last one in the array
-                            .padding(.bottom, location == locations.last ? 50 : 0)
+                        WeatherCard(location: location, weather: weatherInfo[location], inDeletionMode: $inDeletionMode) {
+                            self.locations.removeAll { $0 == location }
+                        }
+                        .onAppear {
+                            loadWeather(for: location)
+                        }
+                        .padding(.bottom, location == locations.last ? 50 : 0)
                     }
                 }
                 .padding()
@@ -30,27 +30,27 @@ struct Profile: View {
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
             )
-            .navigationBarItems(leading: settingsButton, trailing: editButton)
+            .navigationBarItems(leading: deleteButton, trailing: addButton)
             .navigationBarTitle("Weather", displayMode: .inline)
-        }
-
-
-
-    }
-
-    private var settingsButton: some View {
-        Button(action: {
-            print("Settings tapped")
-        }) {
-            Image(systemName: "gearshape").foregroundColor(.primary)
+            .sheet(isPresented: $showingAddCityView) {
+                AddCityView(locations: $locations, showing: $showingAddCityView)
+            }
         }
     }
 
-    private var editButton: some View {
+    private var deleteButton: some View {
         Button(action: {
-            print("Edit tapped")
+            inDeletionMode.toggle()
         }) {
-            Image(systemName: "bell").foregroundColor(.primary)
+            Image(systemName: inDeletionMode ? "minus.circle.fill" : "minus.circle").foregroundColor(.primary)
+        }
+    }
+
+    private var addButton: some View {
+        Button(action: {
+            showingAddCityView = true
+        }) {
+            Image(systemName: "plus").foregroundColor(.primary)
         }
     }
 
@@ -58,7 +58,7 @@ struct Profile: View {
         weatherService.fetchWeather(forCity: location) { weatherData in
             if let weatherData = weatherData {
                 DispatchQueue.main.async {
-                    self.weatherInfo[location] = weatherData
+                    weatherInfo[location] = weatherData
                 }
             }
         }
@@ -68,6 +68,8 @@ struct Profile: View {
 struct WeatherCard: View {
     var location: String
     var weather: WeatherData?
+    @Binding var inDeletionMode: Bool
+    var deleteAction: () -> Void
 
     var body: some View {
         HStack {
@@ -83,6 +85,12 @@ struct WeatherCard: View {
                 }
             }
             Spacer()
+            if inDeletionMode {
+                Button(action: deleteAction) {
+                    Image(systemName: "trash.fill")
+                        .foregroundColor(.red)
+                }
+            }
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white.opacity(0.8)))
